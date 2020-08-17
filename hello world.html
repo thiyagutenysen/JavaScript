@@ -1,0 +1,541 @@
+<script>
+	console.log("hello world"); // this will print out in console and not in webpage
+	// this is how we do inline comment
+	/*
+	this is how we do multi line comment
+	*/
+
+	// data types
+
+	var name= "free_code_camp"; // it can be used anywhere
+	name=5;
+	variable= 0.223
+	let my_name= " hello "; // it will work under it's scope
+
+	const pi=3.14; // it's just constant
+
+	// variable assignment
+
+	var a; // declaring a variable a and it's null
+	var b=2; // assigning 2 to b
+	console.log(a); // to check what's in a in console
+
+	// String concatenation
+	var i_am = "i_am_a ";
+	i_am=i_am+"string";
+	console.log(i_am);
+
+	// Increment or decrement
+	var my_var=6;
+	my_var++; // same as my_var=my_var+1
+	my_var--;
+
+	// shortcuts
+	my_var += 5;
+	my_var -=5;
+	my_var *= 5;
+	my_var /= 5;
+
+	// Length of the string
+	var name = "chella";
+	len=name.length;
+	console.log(len);
+
+	// Indexing a string
+	var name = "chella Thiyagarajan N";
+	//console.log(name[-1]); // won't work
+	console.log(name[5]);
+
+	// strings are immutable
+	name[5]="e"; // this won't work 
+	console.log(name);
+
+	// Data Structures
+
+	// arrays
+	var ourArray = ["chella", 8];
+	var myArray = [];
+	// nested array or multi dim array
+	var myArray = [["chella",1],["krishna",2]];
+	// indexing with array
+	console.log(myArray[1]);
+	// modify array
+	ourArray[0]=45;
+	console.log(ourArray);
+	// appending an array at the end
+	myArray.push(["akshay",3]);
+	console.log(myArray);
+	// delete at the end in array
+	var popped_item=ourArray.pop();
+	console.log(ourArray);
+	// delete at first
+	var deleted_item = ourArray.shift();
+	console.log(deleted_item,ourArray);
+	// add an element at the begenning of the array
+	var list = ["naveen",4];
+	myArray.unshift(list);
+	console.log(myArray);
+
+
+	// Functions
+	function my_function(pass_var)
+	{
+		console.log(pass_var);
+	}
+	my_function("hello"); // function call
+
+	// Scopes
+
+	/* if a variable is defined outside all functions like "var name" then it can be used in any functions*/
+	/* if a variable is defined inside a function like "var name" then name came be used only inside that function*/
+	/* if a variable is defined inside a function like "name" just name without a var before it. then name came be used globally anywhere */
+	/* if two variables have the same name then local variable inside that fuction takes precedence than global variable*/
+	// return a value from the function
+
+	function add_numbers(a,b)
+	{
+		return a+b;
+	}
+	console.log(add_numbers(10,5));
+	// convert array into seeable string
+	console.log(JSON.stringify(myArray), "json stringify method");
+
+	/* boolean in js : true   false   */
+
+	// Operators
+
+	// comparision operator
+	var a = 2;
+	var b = '2';
+	console.log(a==b); //this produces true, we use == double equal attempt to convert both variable into comman type 
+	console.log(a===b); // tis produces false, we use === triple equal attempt even compares type
+
+	// inequality operator
+	console.log(a!=b); // this produces false, we use != symbol, it also does type conversion as == symbol
+	console.log(a!==b); // this produces true, it does not do type conversion.
+
+	// greater than less than operator
+	var a = 25;
+	var b = 30;
+	console.log(a>b); // if a is greater than b
+	console.log(a>=b); // if a is greater than or equal to b
+	console.log(a<b); // if a is less than b
+	console.log(a<=b); // if a is less than or equal to b
+
+	// and operator and 0r operator
+	var val =27;
+	console.log(val>=25 && val<=30); //we get true, we use && for and operator
+	console.log(val<25 || val>30); //we get false, we use || dor or operator
+
+	// Conditional statements
+
+	// if and else statements 
+	var val = 25;
+	if(val>25)
+	{
+		console.log(" val is greater than 25 ");
+	}
+	else if (val == 25)
+	{
+		console.log(" val is equal to 25 ");
+	}
+	else
+	{
+		console.log(" val is less than 25 ");
+	}
+
+	// Switch statements
+
+
+	// return undefined
+	function abTest(a,b)
+	{
+		if (a<0 || b<0)
+		{
+			return undefined;	// it will return undefined type and js has a data type called undefined
+		}
+		else
+		{
+			return Math.round(Math.pow(Math.sqrt(a)+ Math.sqrt(b),2));
+		}
+	}
+	console.log(abTest(-2,2));
+
+	// Now we are entering a new territory
+	// we will learn javascript objects
+	// it's like a struct in C++, it's a user defined data type
+	// it's like dictionary if you know python
+
+	// creating an object
+	var ourDog =
+	{
+		"name": "Camper",
+		"legs": 4,
+		"tails": 1,
+		"friends": ["everyone!"]
+	}; // , after each data and finally ; after the } bracket
+
+	// accessing object property using . notation
+	var dog_name= ourDog.name; // type 1 access
+	var dog_name_1 = ourDog['name']; // type 2 access
+	var peru = "name";
+	var dog_name_2 = ourDog[peru];
+
+	// update object
+	ourDog.name= "Scooby";
+
+	// add a property to the object
+	ourDog.bark= "bow-wow"; // type 1
+	ourDog["bark"]= "woof"; // type 2
+
+	// how to delete a property in an object
+	delete ourDog.bark;
+
+	// we can use objects instead of switch for lookups
+
+	// check if a property exist in that object
+	console.log(ourDog.hasOwnProperty("bark")); // it prints true or false
+
+	// we can have array of objects
+	var anime = [
+	{
+		'name': 'chella',
+		'char': ['sasuke', 'naruto'] 
+	},
+	{
+		'name': 'deva',
+		'char': ['gaara', 'madara']
+	}
+	];
+
+	console.log(anime[0].name," accessing array of objects ");
+	console.log(anime[1].char[1])
+
+	// accessing nested objects
+	var car = {
+		'engine': {
+			'inside': {
+				'name': 'ferrari'
+			},
+			'outside': {
+				'name': 'Alpha Romeo'
+			}
+		}
+	};
+
+	console.log(car.engine.inside.name)
+
+	// while loop
+	var while_array = [];
+	var i = 0;
+	while(i<5){
+		while_array.push(i);
+		i++
+	}
+	console.log(while_array);
+
+	// for loop
+	var for_array = [];
+	for(var i=0; i<5; i++){
+		for_array.push(i);
+	}
+	console.log(for_array);
+
+	// length of an array = array.length
+
+	// do-while loop
+	var do_while_array = [];
+	var i = 0;
+	do {
+		do_while_array.push(i);
+		i++
+	} while(i<5)
+	console.log(do_while_array);
+
+	// fancy js way of checking if property is found else print the statement
+	console.log(car.engine['cool'] || 'cool property is not found')
+
+	// generate random decimal numbers
+	console.log(Math.random());
+
+	// generate random whole numbers between 0 and 9
+	console.log(Math.floor(Math.random()*10))
+
+	// convert a string to integer, type conversion
+	console.log(parseInt('54')); // if it couldn't convert it returns nan - not a number
+
+	// convert binary to integer
+	console.log(parseInt('10011',2)) // base 2 
+
+	// ternary statement or oneline ? if else statements
+	// condition ? statement-if-true : statement-if-false
+	console.log(5>4 ? true: false);
+
+	// ES6 from 2015
+	// we can use let and const rather than var alone
+	// let works as var but it allows you to declare a variable only once
+	// let variable can be accessed only inside it's block
+	// var can be accessed everywhere
+	// const value is not mutable but elements of const array is mutable
+
+	const PRIME = 4;
+	//PRIME = 5 // this gives us error
+	//console.log(PRIME);
+
+	const ARRAY = [1,2,3];
+	// ARRAY = [2,3,4] // this produces error too
+	ARRAY[0] = 5; // this works fine
+	console.log(ARRAY);
+
+	// how to make an object immutable, bcz making an object as const too is mutable when it is an array
+	var math_constants = {
+		'PI': 3.14
+	};
+	Object.freeze(math_constants);  // this method is used to freeze the object passed into it
+
+	try{
+		math_constants.PI = 99;
+	}	catch(ex) {
+		console.log(ex);
+	}
+	console.log(math_constants.PI)
+
+	// use arrow function to write consise anonymous function
+	// basic type 1
+	var magic = function() {
+		return new Date();
+	};
+	// basic type 2
+	var magic = () => {
+		return new Date;
+	};
+	// basic type 3 when we have only one return statement
+	var magic = () => new Date;
+
+	// write arrow function with parameters
+	//base type 1
+	var join = function(array1, array2) {
+		return array1.concat(array2);
+	} ;
+	// base type 2
+	var join = (array1, array2) => array1.concat(array2);
+
+	// we can use map and filter methods inside a arrow function which will be studied later
+	var real_number_array = [1,5.5,-3.43,-6,56, 75];
+	const square_list = (arr) => {
+		const squared_integers = arr.filter(num => Number.isInteger(num) && num>0).map(x => x*x);
+		return squared_integers;
+	};
+	console.log(square_list(real_number_array));
+
+	// higher order arrow function
+	// the outer function executes immediately, so the returned value is inner function  
+	const increment = (function(){   // this is immediately invoked functions
+		return function increment(number, value = 1) {
+			return number + value;
+		};
+	})();
+	console.log(increment(5,2)); // outputs 7 
+	console.log(increment(5)); // outputs 6
+	// just normal implementation
+	function increments(number, value = 1){
+		return number + value;
+	}
+	console.log(increments(5,2)); // outputs 7 
+	console.log(increments(5)); // outputs 6
+
+	// rest operator with function parameters
+	// accept any number of arguments
+	// base type 1
+	const sum = (function() {
+		return function sum(x,y,z) {
+			const args = [x,y,z];
+			return args.reduce((a,b) => a+b, 0); // The reduce() method reduces the array to a single value.
+			// array.reduce(function(total, currentValue, currentIndex, arr), initialValue) // total = initialValue
+		};
+	})();
+	console.log(sum(1,2,3));
+	// base type 2
+	const sums = (function() {
+		return function sums(...args) { // ... is rest operator which puts together all the input into an array called args.
+			return args.reduce((a,b) => a+b, 0); // The reduce() method reduces the array to a single value.
+			// array.reduce(function(total, currentValue, currentIndex, arr), initialValue) // total = initialValue
+		};
+	})();
+	console.log(sums(1,2,3,4)); // we can add any number of numbers
+
+	// use the spread operator to evaluate array in place
+	// it is also ... operator
+	// it copies the array to another without referencing it.
+	// normal script
+	var arr1 = [1,2,3,4,5];
+	let arr2;
+	(function() {
+		arr2 = arr1 // here arr1 and arr2 both are same
+		arr1[0] = 'potato';
+	})();
+	console.log(arr2);
+	// usingspread operator to copy the array
+	arr1 = [1,2,3,4,5];
+	(function() {
+		arr2 = [...arr1]; // here arr1 and arr2 both are same
+		arr1[0] = 'potato';
+	})();
+	console.log(arr2);
+
+	// use destructuring assignment to assing variables with object property values
+	var voxel = {x:3.6, y: 7.4, z: 6.54};
+	// old way of assignment
+	var a = voxel.x;
+	var b = voxel.y;
+	var c = voxel.z;
+	// new way by destructuring assignment
+	var {x:a, y:b, z:c} = voxel; // assign x to a, y to b, z to c of voxel in a single statement.
+
+	// destructuring assignment with nested objects
+	const local_forecast = {
+		today: {
+			min: 72,
+			max: 83
+		},
+		tomorrow: {
+			min: 73.3,
+			max: 84.6
+		}
+	};
+	// max tomorrow temperature
+	const { tomorrow : { max: max_of_tomorrow}} = local_forecast;
+	console.log(max_of_tomorrow);
+
+	// use destructuring assignment to assign variables with values of array.
+	const [x,y,,z] = [1,2,3,4,5,6];
+	console.log(x,y,z); // this print out 1,2 and 4
+
+	// swap variables with destructuring assignment
+	var a=6, b=8;
+	[b, a] = [a, b];
+	console.log(a,b);
+
+	// Use destructuring assignment with rest operator
+	var array = [1,2,3,4,5,6,7,8,9];
+	// copy the array without first 2 elements
+	[,,...copied_array] = array;
+	console.log(copied_array);
+
+	// pass an object as a function's parameter using destructuring assignment
+	// normal implementation
+	const stats = {
+		max: 54,
+		min: 45,
+		mid: 50
+	};
+	const half = (function() {
+		return function half(object) {
+			return (object.max+object.min)/2.0;
+		};
+	})();
+	console.log(half(stats));
+	// new method
+	// we use this method often with api calls
+	const halfs = (function() {
+		return function halfs({max, min}) { // instead of passing the whole object we just passed required properties.
+			return (max + min)/2.0;
+		};
+	})();
+	console.log(halfs(stats));
+
+	// Customising output strings
+	// we use string literals
+	// we use backticks for it `` which enables us to insert js elements and multiline strings.
+	const info = `max, teperature is ${stats.max}!
+	min temperature is ${stats.min}.`;
+	console.log(info);
+
+	// write concise object literal declarations using simple fields.
+	// we will write a basic function to return a object.
+	const createPerson = (name,age,gender) => {
+		return {
+			name: name,
+			age: age,
+			gender: gender
+		};
+	};
+	console.log(createPerson('chella',54,'M'));
+	// new method
+	const createPersons = (name,age,gender) => ({name, age, gender});
+	console.log(createPersons('chella',54,'M'));
+
+	// function inside an object
+	const bicycle = {
+		gear: 2,
+		setGear: function(newGear){ // setGear is the function here
+			this.gear = newGear;
+		}
+	};
+	bicycle.setGear(3);
+	console.log(bicycle.gear);
+	// consise method
+	const bicycles = {
+		gear: 2,
+		setGear(newGear){ // setGear is the function here
+			this.gear = newGear;
+		}
+	};
+	bicycles.setGear(3);
+	console.log(bicycles.gear);
+
+	// use class syntax to define a constructor function
+	// important older way to create an object
+	var Space = function(target) {
+		this.target = target;
+	}
+	var zeus = new Space('jupiter'); // we use new keyword to create an object
+	console.log(zeus.target);
+	// new method using class and it's constructor
+	class Spaces {
+		constructor(target){
+			this.target = target;
+		}
+	}
+	var zeuses = new Spaces('jupiter');
+	console.log(zeuses.target);
+	// different way
+	function makeClass() {
+		class vegetables {
+			constructor(name){
+				this.name = name;
+			}
+		}
+		return vegetables;
+	}
+	const vegetables = makeClass(); //this returns vegetables class
+	const carrot = new vegetables('carrot');// this is same as above method
+	console.log(carrot.name);
+
+	// Use getters and setters.
+	class book {
+		constructor(author) {
+			this.author_ = author;
+		}
+		//getter
+		get writer(){
+			return this.author_;
+		}
+		//setter
+		set writer(updatedAuthor){
+			this.author_ = updatedAuthor;
+		}
+	} 
+	const book1 = new book('rick riordan');
+	console.log(book1.writer);
+	book1.writer = 'jack morton';
+	console.log(book1.author_, book1.writer);
+
+	// difference between import and require
+	import { capitalizeString } from "helper_for_js_tutorial.js";
+	const cap = capitalizeString("cellla");
+	console.log(cap);
+
+
+
+</script>

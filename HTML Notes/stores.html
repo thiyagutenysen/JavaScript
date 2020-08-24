@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <!-- HTML is only to mention the content of this page -->
+  <head>
+    <title>Chella's stores website</title>
+    <!-- this is rendered in the tab -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="stores.html">Store</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <h1>The One Direction</h1>
+    </header>
+    <section>
+      <!-- below i create 3 sections for music, merch and cart -->
+      <!-- this section is for music -->
+      <h2>Music</h2>
+      <div>
+        <!-- this div is to wrap one whole product element -->
+        <div>
+          <strong>Album1</strong>
+        </div>
+        <img src="Images/Album 1.png" />
+        <div>
+          <span>$12.99</span>
+          <button>add to cart</button>
+        </div>
+      </div>
+      <div>
+        <!-- this div is to wrap one whole product element -->
+        <div>
+          <strong>Album2</strong>
+        </div>
+        <img src="Images/Album 2.png" />
+        <div>
+          <span>$12.99</span>
+          <button>add to cart</button>
+        </div>
+      </div>
+      <div>
+        <!-- this div is to wrap one whole product element -->
+        <div>
+          <strong>Album3</strong>
+        </div>
+        <img src="Images/Album 3.png" />
+        <div>
+          <span>$12.99</span>
+          <button>add to cart</button>
+        </div>
+      </div>
+      <div>
+        <!-- this div is to wrap one whole product element -->
+        <div>
+          <strong>Album4</strong>
+        </div>
+        <img src="Images/Album 4.png" />
+        <div>
+          <span>$12.99</span>
+          <button>add to cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- this section is for Merch -->
+      <h2>Merch</h2>
+      <div>
+        <!-- this div is to wrap one whole product element -->
+        <div>
+          <strong>Tshirt</strong>
+        </div>
+        <img src="Images/Shirt.png" />
+        <div>
+          <span>$10.99</span>
+          <button>add to cart</button>
+        </div>
+      </div>
+      <div>
+        <!-- this div is to wrap one whole product element -->
+        <div>
+          <strong>Mug</strong>
+        </div>
+        <img src="Images/Cofee.png" />
+        <div>
+          <span>$5.99</span>
+          <button>add to cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- this section is for Cart -->
+      <h2>Cart</h2>
+      <div>
+        <strong>Item</strong>
+        <strong>Price</strong>
+        <strong>Quantity</strong>
+      </div>
+      <div>
+        <img src="Images/Album 1.png" width="75" height="75" />
+        <span>Album1</span>
+        <span>$12.99</span>
+        <input type="number" value="1" />
+        <!-- input empty element accepts input from user, it displays a box to enter your value, 
+          Initial value is set here to 1, 
+          but if we enter a value inside the box it is rendered in value attribute instead of 1
+          as the type attribute is number here we can enter only numbers in that box 
+        -->
+        <button>remove</button>
+      </div>
+      <div>
+        <img src="Images/Cofee.png" width="75" height="75" />
+        <span>Mug</span>
+        <span>$5.99</span>
+        <input type="number" value="2" />
+        <button>remove</button>
+      </div>
+      <hr />
+      <div>
+        <strong>Total</strong>
+        <span>$54.99</span>
+      </div>
+
+      <button>PURCHASE</button>
+    </section>
+
+    <footer>
+      <!-- This works as header, it says whatever inside this are gonna be the footer of the page and the end of the page -->
+      <h3>The One Direction</h3>
+      <ul>
+        <a href="https://twitter.com/onedirection">
+          <li><img src="twitter.png" /></li>
+        </a>
+        <a
+          href="https://open.spotify.com/artist/4AK6F7OLvEQ5QYCBNiQWHq"
+          target="_blank"
+        >
+          <li><img src="spotify.png" /></li>
+        </a>
+        <a href="https://www.facebook.com/onedirectionmusic/">
+          <li><img src="facebook.png" /></li>
+        </a>
+      </ul>
+    </footer>
+  </body>
+</html>

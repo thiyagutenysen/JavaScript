@@ -1,0 +1,162 @@
+<!-- There are actuall three elements in html, they are html, head, body-->
+<!-- 4th element is the doctype - it tells the browser to use the most up to date version of html-->
+<!DOCTYPE html>
+<html>
+  <!-- HTML is only to mention the content of this page -->
+  <head>
+    <!-- this element is optional, things inside head are not displayed in the website, it has info about the website-->
+    <!-- now this file name is helloworld.html, our url will be http://127.0.0.1:5500/hello_world.html
+    if our file name is changed to index.html, browser understands it as the home page of our website and our url will be just
+    this http://127.0.0.1:5500/ 
+    -->
+    <title>Chella's website</title>
+    <!-- this is rendered in the tab -->
+    <!-- I need to learn about meta tags -->
+  </head>
+  <body>
+    <!-- This body element has all the things that are shown in the website-->
+    <!-- <element> jhbjhvjhbj </element> - this is html elements
+    <element> - this is empty element 
+    -->
+    <header>
+      <!-- it says this block of code is header for our page-->
+      <nav>
+        <!-- it says it is the navigation section of our page-->
+        <ul>
+          <!-- This element is unordered list, there is also ordered list tag <ol></ol> -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="stores.html">Store</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <!-- this is an empty element which just applies a horizontal line down the above elements-->
+      <h1>The One Direction</h1>
+      <!-- There are 6 headers with different sizes increasing from h6 to h1-->
+      <button>Get our latest Album</button>
+      <!-- button tag renders the clicking functionality of a tag-->
+      <!--
+		  <h1>
+			  5>3  --- this line won't work, bcz ">" is special to html purposes, and it may mess with the page 
+		  </h1>
+		  in order to render above forbidden symbols or entities we use = &#entity_number
+      -->
+      <br />
+      <!-- this is a line break tag, this indents to next line wherever it is-->
+      <br />
+      <button> &#9658 </button> <!-- this renders the play button-->
+    </header>
+
+    <section>
+      <h2>Songs</h2>
+      <div>
+        <!-- div holds a block of code and it also breaks the line -->
+        <div>
+          <strong>Jul 21</strong>
+          <!-- strong tag bolds the text-->
+          <span>Album</span>
+          <!-- span works as div to hold html codes but without the line break-->
+          <span>You and Me</span>
+          <button type="button">Play</button>
+          <!-- type has 4 options - button,menu,submit,reset -->
+          <hr />
+          <!-- horizontal line -->
+        </div>
+        <div>
+          <strong>Aug 21</strong>
+          <!-- strong tag bolds the text-->
+          <span>Album</span>
+          <!-- span works as div to hold html codes but without the line break-->
+          <span>Steal my girl</span>
+          <button type="button">Play</button>
+          <!-- type has 4 options - button,menu,submit,reset -->
+          <hr />
+          <!-- horizontal line -->
+        </div>
+        <div>
+          <strong>Oct 21</strong>
+          <!-- strong tag bolds the text-->
+          <span>Album</span>
+          <!-- span works as div to hold html codes but without the line break-->
+          <span>History</span>
+          <button type="button">Play</button>
+          <!-- type has 4 options - button,menu,submit,reset -->
+          <hr />
+          <!-- horizontal line -->
+        </div>
+        <div>
+          <strong>Nov 21</strong>
+          <!-- strong tag bolds the text-->
+          <span>Album</span>
+          <!-- span works as div to hold html codes but without the line break-->
+          <span>Little Things</span>
+          <button type="button">Play</button>
+          <!-- type has 4 options - button,menu,submit,reset -->
+          <hr />
+          <!-- horizontal line -->
+        </div>
+        <div>
+          <strong>Dec 21</strong>
+          <!-- strong tag bolds the text-->
+          <span>Album</span>
+          <!-- span works as div to hold html codes but without the line break-->
+          <span>What makes you beautiful</span>
+          <button type="button">Play</button>
+          <!-- type has 4 options - button,menu,submit,reset -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <!-- This works as header, it says whatever inside this are gonna be the footer of the page and the end of the page -->
+      <h3>The One Direction</h3>
+      <ul>
+        <a href="https://twitter.com/onedirection">
+          <li><img src="twitter.png" /></li>
+        </a>
+        <a href="https://open.spotify.com/artist/4AK6F7OLvEQ5QYCBNiQWHq">
+          <li><img src="spotify.png" /></li>
+        </a>
+        <a href="https://www.facebook.com/onedirectionmusic/">
+          <li><img src="facebook.png" /></li>
+        </a>
+      </ul>
+    </footer>
+
+    <!--
+		<h1>
+			5>3  --- this line won't work, bcz ">" is special to html purposes, and it may mess with the page 
+		</h1>
+		in order to render above forbidden symbols or entities we use = &#entity_number
+	  -->
+    <!--<h1>5 &#60 3</h1>-->
+
+    <!--
+		There are meaningful and meaningless elements in HTML
+		Meaning ful elements -- <header>, <nav>, <section>, eg., <header> wraps around the header of the page.
+		Meaningless elements -- <div>, <span>, they just holds html code together. div is multiline, span is inline
+    -->
+
+    <!--
+    We will talk about links here
+    anchor tags used to embed links
+    <a href="hvjvvjhvb.com">
+      link_text
+    </a>
+    whereas img tag uses src
+    here a uses href Hypertext REFerence
+    image link can also have image links
+    <img scr="google_img_url.com"
+
+    Target attribute of the anchor tags
+    <a type="_self" href="jhgvhhjjhjh.com"> -- self opens the link in the same tab and it is default 
+      text
+    </a>
+
+    <a type="_blank" href="jhgvhhjjhjh.com"> -- blank opens the link in the new tab 
+      text
+    </a>
+
+    -->
+  </body>
+</html>

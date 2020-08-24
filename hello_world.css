@@ -1,0 +1,224 @@
+/* CSS syntaxes
+selector{
+    property1: value1;
+    property2: value2;
+}
+everything inside the curly brackets are applied to html tags that match the selector
+for eg.,
+h1{
+    color: blue;
+}
+*/
+
+/* CSS selectors
+main selectors are Element, Class, Id.
+
+1. Element selector is like the above and first example
+
+2. most commonly used selector is class
+HTML syntax
+<h1 class="big-header">
+    title
+</h1>
+class is an HTML atrribute which is an attribute of all the html tags
+class attribute especially used with css to distinguish elements to which particular style to be applied
+every element in HTML has class attribute.
+CSS syntax to define stylings of class:
+.class_name {
+    property: value;
+}
+the fullstop "." tells the css it is not a html tag and it is user defined class
+
+We can add two classes to the same tag
+CSS Syntax
+.btn {
+    padding: 10px;
+    color: white;
+}
+
+.btn-1 {
+    background-color: green;
+}
+HTML syntax to add 2 classes in the same tag
+<button class="btn btn-1"> -- different classes are separated by a space
+    but-text
+</button>
+
+3. Id selector
+it is very similar to class but a html element can have only one id whereas it can have many classes.
+id is unique
+HTML syntax
+<h1 id="main-header">
+    title
+</h1>
+each element can have only one id throught the html page, but html does not enforce this
+CSS syntax
+#id {
+    property: value:
+}
+
+it is reccomended to use class selectors mostly and avoid html and id selectors
+*/
+
+/* 
+CSS Selector Combinations
+we don't put "space" in combining selectors
+1. combine class and class selectors 
+CSS syntax
+.selector1.selector2 {
+    property: value;
+}
+the above styling is applied to all the html elements with both selector1 and selector2 as it's class attributes
+
+2. combine html and class selector 
+HTML syntax
+<h1 class='large-heading'>
+    title
+</h1>
+CSS syntax to particularly select h1 tags with large-heading class
+h1.large-header{
+    font-size: 200%
+}
+
+3. combining id and class attributes
+HTML syntax
+<h2 id="big-blue" class="large blue">
+    title
+</h2>
+CSS syntax
+#big-blue.large.blue {  -- instead of space in "large blue" we replace it with large.blue in css combinations
+    color: blue;
+    font-size: 200%;
+}
+
+Another way of combining selectors
+parent child class
+1. CSS syntax
+.ancestor .child {    -- u leave a space between parent and child selector 
+    property: value;  -- this style is applied to all the child class within the ancestor clss
+}
+
+2. 
+HTML syntax
+<div>
+    <p>Selected</p>
+</div>
+
+CSS syntax
+div p {             -- combination of ancestor html selector and child html selector
+    color: red;
+}
+this specifies that u apply the above styling to all the "p"s within "div"s
+
+3.
+much specific example choosing both html elements and class
+HTML syntax
+<header class="main-header">
+    <h1 class="brown">
+        selected
+    </h1>
+</header>
+CSS syntax selecting it should be header with main-header class and h1 with brown class
+header.main-header h1.brown {
+    color: brown;
+}
+
+4. 
+Combine 2 css classes itself to avoid duplication
+initial
+CSS syntax
+.big{
+    font-size: 200%;
+}
+.large  {
+    font-size: 200%;
+}
+after combining them 
+.big, .large {            -- nig and large represent the same
+    font-size: 200%;
+}
+
+5. Everything selector
+CSS syntax
+* {
+    font-family: Ariel;
+}
+the above style is applied to everything in the html page in which it is loaded
+*/
+
+/*
+How to load css to HTML
+There are 3 ways to do it
+
+1. Inline
+The first and by far the worst
+<h1 style="color: blue;">
+    title
+</h1>
+we use the style attribute of the html tag
+the style html attribute is present to all html tags
+the above stuff is done inside the html file
+
+2. Style tag or element
+<head>
+    <style>
+    .blue {
+        color: blue;
+    }
+    </style>
+</head>
+this is also worst method
+the above stuff is done in html file itself
+
+3. External css file
+HTML syntax
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head
+we add the css file inside head and not body
+link has rel attribute to find the link between link file and html 
+the above stuff is best method
+*/
+
+/* priorities and importances
+
+1. between elements in the style sheet
+element or HTML selector is least important
+class selector always overrides element selector
+importance: id>class>element selector
+
+2. between different loading methods 
+inline>external style sheet
+
+3. normally html elements inherits it's parent tag's style, but it give more important to it's own class
+
+*/
+
+/* different ways to represent colors
+
+1. color: red;
+
+2. color: #00FFFF;
+
+3. color: rgb(255, 255, 0);
+
+4. color: rgba(255, 255, 0, 0.5) -- a represents transperancy
+a's value lies between 0 to 1: 0-full color, 1- full transparency
+
+5. color: hsl(0, 100%, 50%)   -- hue,saturation, lightness
+   color: hsla(0, 100%, 50%, 0.5) -- with transparency
+*/
+
+.box {
+  height: 100px; /* inside height of the box for content*/
+  width: 7em; /* inside width of the box for content */
+  padding: 20px; /* padding from content to outside till margin*/
+  margin: 50px; /* margin is gap between the box and other elements */
+  border: 10px solid black; /* border of box with 10px thick and black*/
+  background-color: red; /* height,width,padding - color */
+}
+/* let's talk about the box's value
+100px - 100 pixels
+100% - 100 percent of width or height - responsive to the website
+1em - font_size pixels - if fontsize = 16 then 16px
+1rem - font_size of the root of the file pixels

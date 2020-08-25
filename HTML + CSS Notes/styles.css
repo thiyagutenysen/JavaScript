@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  box-sizing: border-box; /*makes box with whole browser and pads text with 20px*/
+  font-family: Merriweather;
+  color: #777;
+}
+
+html,
+body {
+  /*fill the webpage without any gap*/
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul {
+  /*fill the gap at the top created by nav ul elements i.e., about, store, home*/
+  margin: 0;
+}
+
+.navigation li {
+  display: inline;
+  /*places all the elements of li in a row rather than in each line*/
+  padding: 0 5%; /*left and right = 5% padding, top and bottom = 0 */
+}
+
+.navigation a {
+  display: inline-block; /*allows padding between from top and bottom and left and right*/
+  padding: 0.5em; /*set some gap between each navigation links*/
+  color: white;
+  text-decoration: none; /*to remove the underlining of the html link*/
+}
+
+.main-nav {
+  text-align: center; /*centre alignment like word*/
+  font-size: 2.1em; /* double times it's intial font */
+  font-weight: lighter;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /*works similar to html br element*/
+}
+
+/*when we hover over the element we wanna do something*/
+/*when we hover the inline block changes color to light grey or white*/
+.navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main_header {
+  background-image: url('Images/Album 1.png'); /* image is filled throughout header section*/
+  background-size: cover; /* zoom and fill the image throught it's header section*/
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* set cackground color little dark, this won't show up as we have the image*/
+  background-blend-mode: multiply; /*combining image and background color makes the image little darker*/
+  padding-bottom: 30px; /* extend header further below*/
+}
+
+.band-name {
+  /*padding is already applied due to h element in html*/
+  text-align: center;
+  margin: 0;
+  font-size: 4em;
+  font-family: Lobster;
+  font-weight: normal;
+  color: white;
+}
+
+.band-header {
+  font-size: 6em;
+}
+
+.band-footer {
+  font-size: 3em;
+  margin: auto 5%;
+}
+
+.content-section {
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+.container {
+  max-width: 900px; /*encloses them within 900px width and no more*/
+  margin: 0 auto; /*sets margin to max size in left and right*/
+  /* above statement kind of places it in center*/
+  padding: 0 1.5em; /*providing gap between other elements other than section in the future*/
+}
+
+.section-header {
+  font-family: Lobster;
+  font-weight: normal;
+  font-size: 3em;
+  color: black;
+  text-align: center;
+}
+
+.about-band-image {
+  float: left; /*this wraps text around the image*/
+  height: 300px; /*height of image*/
+  width: 500px;
+  margin: 2%; /*space between image element and text element*/
+  border-radius: 20%; /*for cropping the image*/
+}
+
+.footer {
+  background-color: #56ccf2;
+  color: white;
+  padding: 0.25em 0;
+}
+
+.footer-navigation li {
+  display: inline-block; /*allows padding between from top and bottom and left and right*/
+}
+
+.footer-container {
+  display: flex;
+}
+
+.footer-container ul {
+  flex-grow: 1;
+  text-align: end;
+  margin: auto 5%;
+}
+
+.footer-navigation li {
+  padding: 0 3%;
+}

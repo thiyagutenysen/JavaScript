@@ -128,3 +128,76 @@ body {
 .footer-navigation li {
   padding: 0 3%;
 }
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.67em;
+  cursor: pointer; /*changes cursor to pointer icon when we hover over the button */
+}
+
+.header-btn {
+  margin: 0.5em 15% 2em 15%; /*top,right,bottom,left*/
+  color: white;
+  border: 2px solid #2d9cdb;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0; /*to make edges sharp*/
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding-left: 2em; /*space between text and the button box*/
+  padding-right: 2em;
+}
+
+.header-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-play {
+  display: block; /*buttons are not block level elements only block elements can have margin as auto*/
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 4em;
+  padding: 0;
+  width: 1.5em;
+  height: 1.5em;
+  color: #2d9cdb;
+}
+
+.songs-row {
+  border-bottom: 1px solid black; /*same as br element*/
+  padding-bottom: 1em; /*space between text and border*/
+  margin-bottom: 1em; /*space between border and below content*/
+}
+
+/*remove the border of last row*/
+.songs-row:last-child {
+  border-bottom: none;
+}
+
+.song-item {
+  display: inline-block; /*this allows to apply width, bcz inline-block acts as a container*/
+  padding-right: 0.5em;
+}
+
+.song-date {
+  color: black;
+  font-weight: bold;
+  width: 11%; /*specific width only for date*/
+}
+
+.song-album {
+  width: 24%;
+}
+
+.song-name {
+  width: 42%;
+}
+
+.song-btn {
+  max-width: 19%;
+  background-color: #2d9cdb;
+  color: white;
+  padding: 0.5em 2em;
+  border: 1px solid white;
+  border-radius: 10%;
+}

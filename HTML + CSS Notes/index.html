@@ -12,15 +12,16 @@
     <title>Chella's website</title>
     <!-- this is rendered in the tab -->
     <!-- I need to learn about meta tags -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- This body element has all the things that are shown in the website-->
     <!-- <element> jhbjhvjhbj </element> - this is html elements
     <element> - this is empty element 
     -->
-    <header>
+    <header class="main_header">
       <!-- it says this block of code is header for our page-->
-      <nav>
+      <nav class="navigation main-nav">
         <!-- it says it is the navigation section of our page-->
         <ul>
           <!-- This element is unordered list, there is also ordered list tag <ol></ol> -->
@@ -29,98 +30,108 @@
           <li><a href="stores.html">Store</a></li>
         </ul>
       </nav>
-      <hr />
+      
       <!-- this is an empty element which just applies a horizontal line down the above elements-->
-      <h1>The One Direction</h1>
+      <h1 class="band-name band-header">The One Direction</h1>
       <!-- There are 6 headers with different sizes increasing from h6 to h1-->
-      <button>Get our latest Album</button>
-      <!-- button tag renders the clicking functionality of a tag-->
-      <!--
-		  <h1>
-			  5>3  --- this line won't work, bcz ">" is special to html purposes, and it may mess with the page 
-		  </h1>
-		  in order to render above forbidden symbols or entities we use = &#entity_number
-      -->
-      <br />
-      <!-- this is a line break tag, this indents to next line wherever it is-->
-      <br />
-      <button> &#9658 </button> <!-- this renders the play button-->
+      <div class="container">
+        <button class="btn header-btn" >Get our latest Album</button>
+        <!-- button tag renders the clicking functionality of a tag-->
+        <!--
+        <h1>
+          5>3  --- this line won't work, bcz ">" is special to html purposes, and it may mess with the page 
+        </h1>
+        in order to render above forbidden symbols or entities we use = &#entity_number
+        -->
+      
+        <!-- this is a line break tag, this indents to next line wherever it is-->
+      
+        <button class="btn header-btn header-play"> &#9658 </button> <!-- this renders the play button-->
+      </div>
     </header>
 
-    <section>
-      <h2>Songs</h2>
+    <section class="content-section container">
+      <h2 class="section-header">Songs</h2>
       <div>
         <!-- div holds a block of code and it also breaks the line -->
-        <div>
-          <strong>Jul 21</strong>
+        <div class="songs-row">
+          <strong class="song-item song-date">Jul 21</strong>
           <!-- strong tag bolds the text-->
-          <span>Album</span>
+          <span class="song-item song-album">Album</span>
           <!-- span works as div to hold html codes but without the line break-->
-          <span>You and Me</span>
-          <button type="button">Play</button>
+          <span class="song-item song-name">You and Me</span>
+          <button type="button" class="btn song-item song-btn">Play</button>
           <!-- type has 4 options - button,menu,submit,reset -->
-          <hr />
+          
           <!-- horizontal line -->
         </div>
-        <div>
-          <strong>Aug 21</strong>
+        <div class="songs-row">
+          <strong class="song-item song-date">Aug 21</strong>
           <!-- strong tag bolds the text-->
-          <span>Album</span>
+          <span class="song-item song-album">Album</span>
           <!-- span works as div to hold html codes but without the line break-->
-          <span>Steal my girl</span>
-          <button type="button">Play</button>
+          <span class="song-item song-name">Steal my girl</span>
+          <button type="button" class="btn song-item song-btn">Play</button>
           <!-- type has 4 options - button,menu,submit,reset -->
-          <hr />
+          
           <!-- horizontal line -->
         </div>
-        <div>
-          <strong>Oct 21</strong>
+        <div class="songs-row">
+          <strong class="song-item song-date">Oct 21</strong>
           <!-- strong tag bolds the text-->
-          <span>Album</span>
+          <span class="song-item song-album">Album</span>
           <!-- span works as div to hold html codes but without the line break-->
-          <span>History</span>
-          <button type="button">Play</button>
+          <span class="song-item song-name">History</span>
+          <button type="button" class="btn song-item song-btn">Play</button>
           <!-- type has 4 options - button,menu,submit,reset -->
-          <hr />
+          
           <!-- horizontal line -->
         </div>
-        <div>
-          <strong>Nov 21</strong>
+        <div class="songs-row">
+          <strong class="song-item song-date">Nov 21</strong>
           <!-- strong tag bolds the text-->
-          <span>Album</span>
+          <span class="song-item song-album">Album</span>
           <!-- span works as div to hold html codes but without the line break-->
-          <span>Little Things</span>
-          <button type="button">Play</button>
+          <span class="song-item song-name">Little Things</span>
+          <button type="button" class="btn song-item song-btn">Play</button>
           <!-- type has 4 options - button,menu,submit,reset -->
-          <hr />
+          
           <!-- horizontal line -->
         </div>
-        <div>
-          <strong>Dec 21</strong>
+        <div class="songs-row">
+          <strong class="song-item song-date">Dec 21</strong>
           <!-- strong tag bolds the text-->
-          <span>Album</span>
+          <span class="song-item song-album">Album</span>
           <!-- span works as div to hold html codes but without the line break-->
-          <span>What makes you beautiful</span>
-          <button type="button">Play</button>
+          <span class="song-item song-name">What makes you beautiful</span>
+          <button type="button" class="btn song-item song-btn">Play</button>
           <!-- type has 4 options - button,menu,submit,reset -->
         </div>
       </div>
     </section>
 
-    <footer>
-      <!-- This works as header, it says whatever inside this are gonna be the footer of the page and the end of the page -->
-      <h3>The One Direction</h3>
-      <ul>
-        <a href="https://twitter.com/onedirection">
-          <li><img src="twitter.png" /></li>
-        </a>
-        <a href="https://open.spotify.com/artist/4AK6F7OLvEQ5QYCBNiQWHq">
-          <li><img src="spotify.png" /></li>
-        </a>
-        <a href="https://www.facebook.com/onedirectionmusic/">
-          <li><img src="facebook.png" /></li>
-        </a>
-      </ul>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- This works as header, it says whatever inside this are gonna be the footer of the page and the end of the page -->
+        <h3 class="band-name band-footer">The One Direction</h3>
+        <ul class="footer-navigation">
+          <li>
+            <a href="https://twitter.com/onedirection">
+              <img src="twitter.png" />
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/artist/4AK6F7OLvEQ5QYCBNiQWHq">
+              <img src="spotify.png" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/onedirectionmusic/">
+              <img src="facebook.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </footer>
 
     <!--

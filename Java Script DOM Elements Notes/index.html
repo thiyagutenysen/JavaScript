@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>JavaScript DOM Tutorials</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div id="page-banner">
+          <h1 class="title">Bookorama</h1>
+          <p>Books for Ninjas</p>
+          <a href="https://www.w3schools.com/jsref/dom_obj_event.asp"
+            >The link</a
+          >
+          <form id="search-books">
+            <input type="text" placeholder="Search books..." />
+          </form>
+        </div>
+      </header>
+      <div id="book-list">
+        <h2 class="title">Books to Read</h2>
+        <ul>
+          <li>
+            <span class="name">Name of the Wind</span>
+            <span class="delete">delete</span>
+          </li>
+          <li>
+            <span class="name">The Wise Man's Fear</span>
+            <span class="delete">delete</span>
+          </li>
+          <li>
+            <span class="name">Kafka on the Shore</span>
+            <span class="delete">delete</span>
+          </li>
+          <li>
+            <span class="name">The Master and the Margarita</span>
+            <span class="delete">delete</span>
+          </li>
+        </ul>
+      </div>
+      <form id="add-book">
+        <input type="checkbox" id="hide" />
+        <label for="hide">Hide all books</label>
+        <input type="text" placeholder="Add a book..." />
+        <button>Add</button>
+      </form>
+    </div>
+    <!-- <script src="app.js"></script>-->
+  </body>
+</html>
+
+<!--// DOM - document object model
+// created by the browser when a web page is loaded
+// interact with html elements
+
+// Things that we can do
+/*
+1. change / remove html elements // can make changes to html file
+2. change and add CSS styles to elements // can make changes to CSS file
+3. read and change element attributes
+4. attach event listener to elements like (click, keypress, submit)
+*/ -->
+
+<script>
+  // how to parse or query the document
+  console.log(document); // document is a keyword which is also an object and contains the whole html page
+
+  //get element by id
+  console.log(document.getElementById('book-list'));
+  //get elements by class
+  console.log(document.getElementsByClassName('title')[0]); // it returns a list
+  // storing it in a variable
+  var book_list = document.getElementById('book-list');
+  console.log(book_list);
+  // get elements by tag name
+  console.log(document.getElementsByTagName('script'));
+  //looping through each element
+  var scripts = document.getElementsByTagName('script');
+  for (var i = 0; i < scripts.length; i++) {
+    console.log(scripts[i]);
+  }
+  // we will check whether scripts is an array
+  // we would get false, bcz scripts is html collection and not array
+  console.log(Array.isArray(scripts));
+  // we will make it into an array
+  console.log(Array.isArray(Array.from(scripts)));
+
+  // query selector of vanilla javascript
+  console.log(document.querySelector('#book-list')); // == console.log(document.getElementById('book-list'));
+
+  // specific query
+  console.log(document.querySelector('#book-list li:nth-child(2) .name')); // space between parent and child selector is important
+  // nth-child(2) -- 2nd element of lis available
+
+  // special case
+  // we may think the below statement may return a list of all the lis with name class under book-list
+  // but the below query return only one value
+  console.log(document.querySelector('#book-list li .name'));
+  // what to do if we wanna return a list of all we found rather than just one element
+  // the below method return node-list wheras above we saw about html collection
+  console.log(document.querySelectorAll('#book-list li .name'));
+
+  // how to retrieve text of the tags
+  var books = document.querySelectorAll('#book-list li .name');
+  for (i = 0; i < books.length; i++) {
+    console.log(books[i].textContent);
+  }
+
+  // How to change and edit elements
+  for (i = 0; i < books.length; i++) {
+    books[i].textContent += ' book'; // append 'book' string at the end
+    console.log(books[i].textContent);
+  }
+
+  // same as console.log(document.getElementById('book-list'));
+  var book_list = document.querySelector('#book-list');
+  console.log(book_list.innerHTML); // this prints all the html under the book-list id
+  // the editing part
+  book_list.innerHTML += '<p>This is how u add HTML</p>'; // appending at the end
+  console.log(book_list.innerHTML);
+
+  // DOM Nodes
+  //https://www.w3schools.com/jsref/prop_node_nodetype.asp
+  var banner = document.querySelector('#page-banner');
+  console.log('node type is = ', banner.nodeType); // node id
+  console.log('node name is = ', banner.nodeName); // name
+  console.log('check if the node has children  = ', banner.hasChildNodes());
+  // copy html block
+  // we have already retrieved a html block named banner
+  var copybanner = banner.cloneNode(true); // true is to go deep and copy the whole block, if false it copies only the first line
+  console.log(copybanner);
+
+  // traversal in HTML page from parent to child and vice versa
+  //html elements, comments, linebreak, etc., are all nodes
+  var book_list = document.querySelector('#book-list');
+  //parent
+  console.log('parent node is: ', book_list.parentNode);
+  console.log('parent node is: ', book_list.parentElement); // exactly same as above
+  //child
+  console.log(book_list.childNodes);
+  // above returns list of node collection, it also returns linebreaks as text which is unnecessary
+  // so to return only elements
+  console.log(book_list.children);
+  //sibling
+  console.log('next sibling node is = ', book_list.nextSibling);
+  console.log('next sibling element is = ', book_list.nextElementSibling);
+  console.log('previous sibling node is = ', book_list.previousSibling);
+  console.log(
+    'previous sibling element is = ',
+    book_list.previousElementSibling
+  );
+  // example for editing html
+  book_list.previousElementSibling.querySelector('p').innerHTML +=
+    '<br/>Too cool for everyone else!';
+
+  // Events
+  //https://www.w3schools.com/jsref/dom_obj_event.asp
+  // let me add a acction if we click the title
+  var title = document.querySelector('#book-list h2');
+  console.log(title);
+  title.addEventListener('click', function (e) {
+    // e is some variable which captures the event
+    console.log(e.target); // this tells us which element in the document is clicked with tags
+    console.log(e);
+  });
+  // example to delete a list when we click on a delete button
+  /*var btns = document.querySelectorAll('#book-list .delete');
+
+  for (i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function (e) {
+      const li = e.target.parentElement;
+      var ul = li.parentNode;
+      ul.removeChild(li);
+    });
+  }*/
+
+  // example to stop normal html action
+  const link = document.querySelector('#page-banner a');
+
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('navigation to ', e.target.textContent, ' was prevented');
+  });
+
+  // Event Bubbling
+  //another scalable way of implementing event listener
+  var lists = document.querySelector('#book-list ul');
+
+  lists.addEventListener('click', function (e) {
+    if (e.target.className == 'delete') {
+      const li = e.target.parentElement;
+      lists.removeChild(li);
+    }
+  });
+
+  // interacting with forms
+  // querying forms is inbuilt
+  console.log(document.forms);
+  console.log(document.forms[0]);
+  // another way
+  console.log(document.forms['search-books']); // input selector name
+  // example on adding a book list
+  // when we click the button under the form tag it fires some action
+  // when that action is not defined it just refreshes the page
+  // when we refresh all our deleted list appears back as we haven't saved the changes in the html file in a database
+  var addForm = document.forms['add-book']; // add-book id
+  var lists = document.querySelector('#book-list ul');
+  addForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const value = addForm.querySelector('input[type="text"]').value;
+    // we find the input tag and it's attribute type="text" inside square brackets
+    // we grab the text by .value
+    // normally we use textContent but in input tags we use .value to grab text
+    console.log(value);
+
+    // create elements
+    li = document.createElement('li'); // this line just floats around the document without particular position.
+    console.log(typeof li, 'good');
+    const bookName = document.createElement('span');
+    const deleteBtn = document.createElement('span');
+
+    // add content
+    deleteBtn.textContent = 'delete'; // this is how we retrieve or update or insert new text by element.textContent
+    bookName.textContent = value;
+
+    // add classes to tags
+    bookName.classList.add('name');
+    // we can do this by bookName.className = 'name'. This will work for one class
+    // when we wanna add another class, we can do this - bookName.ClassName += ' class2';
+    //above method is too verbose.
+    // we can add a class everytime without worrying about the space between every class
+    // we use -- bookName.classList.add('class2') -- this adds class2 with previosly defined classes or create one
+    deleteBtn.classList.add('delete');
+
+    // append to document
+    li.appendChild(bookName);
+    li.appendChild(deleteBtn);
+    lists.appendChild(li);
+  });
+
+  // we can also do this
+  /*addForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const value = addForm.querySelector('input[type="text"]').value;
+    console.log(value);
+
+    // create elements
+    const newString =
+      '<li> <span class="name">' +
+      value +
+      '</span> <span class="delete">delete</span> </li>';
+    lists.insertAdjacentHTML('beforeend', newString);
+  });*/
+
+  // how to add attributes
+  // querying
+  var book = document.querySelector('li:first-child .name');
+  console.log(book);
+  //getAttribute
+  console.log(book.getAttribute('class'));
+  console.log(book.getAttribute('href')); // it returns null when it's not available
+  // update the attribute
+  book.setAttribute('class', 'name2');
+  console.log(book);
+  // check if it has the particular attribute
+  console.log(book.hasAttribute('class')); //true
+  console.log(book.hasAttribute('href')); // false
+  // delete an attribute
+  book.removeAttribute('class');
+  console.log(book);
+  // all we did above just doesn't make changes in book variable alone it also changes the document that is our website directly.
+
+  // Change events
+  const hideBox = document.querySelector('#hide');
+  hideBox.addEventListener('change', function (e) {
+    if (hideBox.checked) {
+      lists.style.display = 'none';
+    } else {
+      lists.style.display = 'initial';
+    }
+  });
+
+  // Search box method, filters when we press each key
+  const searchForm = document.forms['search-books'];
+  const searchBar = searchForm.querySelector('input');
+  searchBar.addEventListener('keyup', function (e) {
+    // key up to listen to each type
+    const query = e.target.value.toLowerCase();
+    const books = lists.querySelectorAll('li');
+    for (i = 0; i < books.length; i++) {
+      const title = books[i].firstElementChild.textContent;
+      if (title.toLowerCase().indexOf(query) != -1) {
+        // .indexOf returns the index of title in which query is found, if query is not found in title it returns -1
+        // indexOf searches string
+        books[i].style.display = 'block'; // block or initial both are same
+      } else {
+        books[i].style.display = 'none';
+      }
+    }
+  });
+
+  // there are 2 ways to load a js file in html file
+  // normally we will add script at the bottom of the html files
+  // we need html to load first than js file
+  /*<script src="app.js"><script> */
+  // if we don't want to add js file at the bottom
+  // we use DOMContentLoaded Event
+  // 1st step we add  <script src="app.js"><script> in head of the html
+  // 2nd step - come to the js file
+  // at the top of the file
+  /* document.addEventListener('DOMContentLoaded'), function(){
+    // all the js file's code goes into this function
+  });   */
+</script>

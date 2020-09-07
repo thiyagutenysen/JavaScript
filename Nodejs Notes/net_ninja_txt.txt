@@ -1,0 +1,9 @@
+In previous versions, Material-UI has used LESS, then a custom inline-style solution to write the component styles, but these approaches have proven to be limited. A CSS-in-JS solution overcomes many of those limitations, and unlocks many great features (theme nesting, dynamic styles, self-support, etc.).
+
+Material-UI's styling solution is inspired by many other styling libraries such as styled-components and emotion.
+
+💅 You can expect the same advantages as styled-components.
+🚀 It's blazing fast.
+🧩 It's extensible via a plugin API.
+⚡️ It uses JSS at its core – a high performance JavaScript to CSS compiler which works at runtime and server-side.
+📦 Less than 15 KB gzipped; and no bundle size increase if used alongside Material-UI.
